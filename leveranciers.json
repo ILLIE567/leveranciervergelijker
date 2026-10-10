@@ -1,0 +1,8 @@
+{
+  "Demo leverancier": {
+    "Title": "name",
+    "Variant SKU": "sku",
+    "Variant Price": "price",
+    "Variant Inventory Qty": "stock"
+  }
+}
