@@ -1,0 +1,9 @@
+productnaam;artikelnummer;prijs;voorraad
+;FOUT-001;12,95;2
+Demo negatief;FOUT-002;-3,00;5
+Demo prijs;FOUT-003;gratis;4
+Demo voorraad;FOUT-004;7,50;twee
+Demo ontbrekend;;;
+Demo breuk;FOUT-006;1,234;2,5
+Demo negatieve voorraad;FOUT-007;0;-1
+Demo goede rij;FOUT-008;8,95;3

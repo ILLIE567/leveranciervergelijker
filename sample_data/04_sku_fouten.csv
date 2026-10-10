@@ -1,0 +1,5 @@
+name,sku,price,stock
+Demo A,DUP-001,5.00,3
+Demo B,DUP-001,6.00,4
+Demo C,,7.00,1
+Demo D,UNIEK-004,8.00,2
