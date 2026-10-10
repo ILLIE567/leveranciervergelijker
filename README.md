@@ -4,6 +4,10 @@ Een Streamlit-demo voor het vergelijken van twee leveranciersbestanden. De pagin
 start met fictieve oefenbestanden: twintig producten per bestand en vijf bekende
 veranderingen. Bezoekers kunnen daarna hun eigen CSV- of XLSX-bestanden proberen.
 
+De interface start in het Engels. Kies **Language / Taal** in de zijbalk om naar
+Nederlands te wisselen. Rapporten en foutmeldingen volgen de gekozen taal;
+productgegevens, SKU's en bronkolomnamen blijven ongewijzigd.
+
 ## Online zetten
 
 1. Maak op GitHub een repository en upload de inhoud van deze map. Upload geen

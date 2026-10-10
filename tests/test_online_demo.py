@@ -150,7 +150,7 @@ class PublicAppTests(unittest.TestCase):
 
             with self.subTest(filename=filename), patch("streamlit.file_uploader", side_effect=uploader):
                 app = AppTest.from_file(str(ROOT / "streamlit_app.py")).run(timeout=30)
-                app.radio(key="source_mode").set_value("Eigen bestanden").run(timeout=30)
+                app.radio(key="source_mode").set_value("upload").run(timeout=30)
                 self.assertEqual(len(app.exception), 0)
                 self.assertEqual([metric.value for metric in app.metric], ["3", "3", "0"])
 
@@ -169,12 +169,12 @@ class PublicAppTests(unittest.TestCase):
         ) as downloads:
             app = AppTest.from_file(str(ROOT / "streamlit_app.py")).run(timeout=30)
             downloads.reset_mock()
-            app.radio(key="source_mode").set_value("Eigen bestanden").run(timeout=30)
+            app.radio(key="source_mode").set_value("upload").run(timeout=30)
             self.assertEqual(len(app.exception), 0)
-            self.assertTrue(any("3 fouten" in error.value for error in app.error))
+            self.assertTrue(any("3 errors" in error.value for error in app.error))
             labels = [call.args[0] for call in downloads.call_args_list]
-            self.assertIn("Download foutenrapport", labels)
-            self.assertNotIn("Download veranderingenrapport", labels)
+            self.assertIn("Download error report", labels)
+            self.assertNotIn("Download changes report", labels)
 
 
 if __name__ == "__main__":
