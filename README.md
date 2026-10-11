@@ -1,12 +1,18 @@
 # Leveranciersbestanden vergelijken — openbare testversie
 
 Een Streamlit-demo voor het vergelijken van twee leveranciersbestanden. De pagina
-start met fictieve oefenbestanden: twintig producten per bestand en vijf bekende
+start met Engelse fictieve oefenbestanden: honderd producten per bestand en vijf bekende
 veranderingen. Bezoekers kunnen daarna hun eigen CSV- of XLSX-bestanden proberen.
 
 De interface start in het Engels. Kies **Language / Taal** in de zijbalk om naar
 Nederlands te wisselen. Rapporten en foutmeldingen volgen de gekozen taal;
 productgegevens, SKU's en bronkolomnamen blijven ongewijzigd.
+
+De Engelse oefenbestanden zijn beschikbaar als CSV en Excel in `sample_data`.
+Ze bevatten negen kolommen, waaronder langere productomschrijvingen, merk,
+kleur en categorie. `TEST_GUIDE_EN.md` beschrijft de vijf verwachte
+veranderingen. De ingebouwde demo gebruikt `supplier_old.csv` en
+`supplier_new.csv`; de oudere Nederlandse bestanden blijven voor de bestaande tests.
 
 ## Online zetten
 

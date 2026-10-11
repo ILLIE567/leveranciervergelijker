@@ -72,7 +72,7 @@ class LanguageTests(unittest.TestCase):
             self.assertEqual(len(app.exception), 0)
             self.assertEqual(app.title[0].value, "What has changed?")
             self.assertEqual(app.selectbox(key="language").value, "English")
-            self.assertEqual([m.value for m in app.metric], ["20", "20", "5"])
+            self.assertEqual([m.value for m in app.metric], ["100", "100", "5"])
             call = [c for c in downloads.call_args_list if c.kwargs.get("key") == "download_changes"][-1]
             english_csv = pd.read_csv(BytesIO(call.args[1]), dtype=str, keep_default_na=False)
             self.assertEqual(call.args[2], "changes_report.csv")
@@ -81,7 +81,7 @@ class LanguageTests(unittest.TestCase):
             app.selectbox(key="language").set_value("Nederlands").run(timeout=30)
             self.assertEqual(len(app.exception), 0)
             self.assertEqual(app.title[0].value, "Wat is er veranderd?")
-            self.assertEqual([m.value for m in app.metric], ["20", "20", "5"])
+            self.assertEqual([m.value for m in app.metric], ["100", "100", "5"])
             self.assertEqual(app.dataframe[-1].value["Wijziging"].iloc[0], "Prijs gewijzigd")
             call = [c for c in downloads.call_args_list if c.kwargs.get("key") == "download_changes"][-1]
             dutch_csv = pd.read_csv(BytesIO(call.args[1]), dtype=str, keep_default_na=False)
@@ -94,7 +94,7 @@ class LanguageTests(unittest.TestCase):
     def test_language_switch_keeps_mappings_supplier_names_and_mode(self):
         app = AppTest.from_file(str(ROOT / "streamlit_app.py")).run(timeout=30)
         title_mapping = next(widget for widget in app.selectbox if widget.key and widget.key.startswith("mapping_old_") and widget.key.endswith("_Title"))
-        title_mapping.set_value("Merk").run(timeout=30)
+        title_mapping.set_value("Brand").run(timeout=30)
         app.text_input[0].set_value("Café leverancier").run(timeout=30)
         app.button(key="save_profile_old").click().run(timeout=30)
         app.selectbox(key="supplier_old").set_value("Café leverancier").run(timeout=30)
@@ -104,7 +104,7 @@ class LanguageTests(unittest.TestCase):
         self.assertEqual(app.session_state[PROFILE_KEY], before)
         self.assertEqual(app.selectbox(key="supplier_old").value, "Café leverancier")
         title_mapping = next(widget for widget in app.selectbox if widget.key and widget.key.startswith("mapping_old_") and widget.key.endswith("_Title"))
-        self.assertEqual(title_mapping.value, "Merk")
+        self.assertEqual(title_mapping.value, "Brand")
         app.radio(key="source_mode").set_value("upload").run(timeout=30)
         app.selectbox(key="language").set_value("English").run(timeout=30)
         self.assertEqual(len(app.exception), 0)

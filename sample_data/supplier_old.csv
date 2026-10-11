@@ -1,0 +1,101 @@
+﻿SKU,Product name,Price,Stock,Brand,Colour,Weight (g),Description,Category
+000101,Ceramic mug,12.95,10,Demo Supply Co,White,25,Fictional demo product: ceramic mug. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000102,Ballpoint pen,2.50,20,Demo Supply Co,Blue,68,Fictional demo product: ballpoint pen. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000103,A5 notebook,4.50,8,Demo Supply Co,Black,111,Fictional demo product: a5 notebook. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000104,Desk lamp,29.00,7,Demo Supply Co,Grey,154,Fictional demo product: desk lamp. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Lighting
+000105,Pencil set,7.43,33,Demo Supply Co,Green,197,Fictional demo product: pencil set. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000106,Rubber eraser,8.80,40,Demo Supply Co,Red,240,Fictional demo product: rubber eraser. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000107,Metal ruler,10.17,47,Demo Supply Co,Natural,283,Fictional demo product: metal ruler. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000108,Pencil case,11.54,54,Demo Supply Co,Silver,326,Fictional demo product: pencil case. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000109,Document folder,12.91,61,Demo Supply Co,Yellow,369,Fictional demo product: document folder. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000110,Sticky notes,14.28,68,Demo Supply Co,Beige,412,Fictional demo product: sticky notes. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000111,Desk organiser,15.65,75,Demo Supply Co,White,455,Fictional demo product: desk organiser. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000112,Paper clips,17.02,82,Demo Supply Co,Blue,498,Fictional demo product: paper clips. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000113,Stapler,18.39,9,Demo Supply Co,Black,541,Fictional demo product: stapler. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000114,Staples,19.76,16,Demo Supply Co,Grey,584,Fictional demo product: staples. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000115,Office scissors,21.13,23,Demo Supply Co,Green,627,Fictional demo product: office scissors. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000116,Glue stick,22.50,30,Demo Supply Co,Red,670,Fictional demo product: glue stick. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000117,Highlighter set,23.87,37,Demo Supply Co,Natural,713,Fictional demo product: highlighter set. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000118,Whiteboard marker,25.24,44,Demo Supply Co,Silver,756,Fictional demo product: whiteboard marker. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000119,Clipboard,26.61,51,Demo Supply Co,Yellow,799,Fictional demo product: clipboard. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000120,Ring binder,27.98,58,Demo Supply Co,Beige,842,Fictional demo product: ring binder. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000121,Document wallet,29.35,65,Demo Supply Co,White,885,Fictional demo product: document wallet. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000122,Index cards,30.72,72,Demo Supply Co,Blue,928,Fictional demo product: index cards. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000123,Letter tray,32.09,79,Demo Supply Co,Black,971,Fictional demo product: letter tray. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000124,Book stand,33.46,6,Demo Supply Co,Grey,1014,Fictional demo product: book stand. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000125,Desk calendar,34.83,13,Demo Supply Co,Green,1057,Fictional demo product: desk calendar. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Office
+000126,Laptop stand,36.20,20,Demo Supply Co,Red,1100,Fictional demo product: laptop stand. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Technology
+000127,Wireless mouse,37.57,27,Demo Supply Co,Natural,1143,Fictional demo product: wireless mouse. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Technology
+000128,Mouse pad,38.94,34,Demo Supply Co,Silver,1186,Fictional demo product: mouse pad. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Technology
+000129,USB keyboard,40.31,41,Demo Supply Co,Yellow,1229,Fictional demo product: usb keyboard. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Technology
+000130,USB-C cable,41.68,48,Demo Supply Co,Beige,1272,Fictional demo product: usb-c cable. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Technology
+000131,Charging adapter,43.05,55,Demo Supply Co,White,1315,Fictional demo product: charging adapter. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Technology
+000132,USB hub,44.42,62,Demo Supply Co,Blue,1358,Fictional demo product: usb hub. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Technology
+000133,Phone stand,45.79,69,Demo Supply Co,Black,1401,Fictional demo product: phone stand. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Technology
+000134,Tablet sleeve,47.16,76,Demo Supply Co,Grey,1444,Fictional demo product: tablet sleeve. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Technology
+000135,Webcam cover,48.53,83,Demo Supply Co,Green,1487,Fictional demo product: webcam cover. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Technology
+000136,Screen cleaning cloth,49.90,10,Demo Supply Co,Red,1530,Fictional demo product: screen cleaning cloth. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Technology
+000137,Headphone stand,51.27,17,Demo Supply Co,Natural,1573,Fictional demo product: headphone stand. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Technology
+000138,Bluetooth speaker,52.64,24,Demo Supply Co,Silver,1616,Fictional demo product: bluetooth speaker. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Technology
+000139,Power bank,54.01,31,Demo Supply Co,Yellow,1659,Fictional demo product: power bank. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Technology
+000140,Cable clips,55.38,38,Demo Supply Co,Beige,1702,Fictional demo product: cable clips. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Technology
+000141,Water bottle,56.75,45,Demo Supply Co,White,1745,Fictional demo product: water bottle. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000142,Insulated travel mug,58.12,52,Demo Supply Co,Blue,1788,Fictional demo product: insulated travel mug. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000143,Lunch box,59.49,59,Demo Supply Co,Black,31,Fictional demo product: lunch box. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000144,Glass food container,2.86,66,Demo Supply Co,Grey,74,Fictional demo product: glass food container. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000145,Bamboo cutting board,4.23,73,Demo Supply Co,Green,117,Fictional demo product: bamboo cutting board. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000146,Wooden spoon,5.60,80,Demo Supply Co,Red,160,Fictional demo product: wooden spoon. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000147,Silicone spatula,6.97,7,Demo Supply Co,Natural,203,Fictional demo product: silicone spatula. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000148,Measuring cup,8.34,14,Demo Supply Co,Silver,246,Fictional demo product: measuring cup. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000149,Tea infuser,9.71,21,Demo Supply Co,Yellow,289,Fictional demo product: tea infuser. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000150,Coffee scoop,11.08,28,Demo Supply Co,Beige,332,Fictional demo product: coffee scoop. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000151,Kitchen towel,12.45,35,Demo Supply Co,White,375,Fictional demo product: kitchen towel. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000152,Oven glove,13.82,42,Demo Supply Co,Blue,418,Fictional demo product: oven glove. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000153,Bottle opener,15.19,49,Demo Supply Co,Black,461,Fictional demo product: bottle opener. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000154,Reusable straw set,16.56,56,Demo Supply Co,Grey,504,Fictional demo product: reusable straw set. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000155,Coaster set,17.93,63,Demo Supply Co,Green,547,Fictional demo product: coaster set. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000156,Serving tray,19.30,70,Demo Supply Co,Red,590,Fictional demo product: serving tray. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000157,Fruit bowl,20.67,77,Demo Supply Co,Natural,633,Fictional demo product: fruit bowl. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000158,Salt shaker,22.04,84,Demo Supply Co,Silver,676,Fictional demo product: salt shaker. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000159,Pepper grinder,23.41,11,Demo Supply Co,Yellow,719,Fictional demo product: pepper grinder. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000160,Dish brush,24.78,18,Demo Supply Co,Beige,762,Fictional demo product: dish brush. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Kitchen
+000161,Storage basket,26.15,25,Demo Supply Co,White,805,Fictional demo product: storage basket. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000162,Cotton cushion,27.52,32,Demo Supply Co,Blue,848,Fictional demo product: cotton cushion. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000163,Throw blanket,28.89,39,Demo Supply Co,Black,891,Fictional demo product: throw blanket. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000164,Candle holder,30.26,46,Demo Supply Co,Grey,934,Fictional demo product: candle holder. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000165,Scented candle,31.63,53,Demo Supply Co,Green,977,Fictional demo product: scented candle. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000166,Small plant pot,33.00,60,Demo Supply Co,Red,1020,Fictional demo product: small plant pot. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000167,Large plant pot,34.37,67,Demo Supply Co,Natural,1063,Fictional demo product: large plant pot. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000168,Photo frame,35.74,74,Demo Supply Co,Silver,1106,Fictional demo product: photo frame. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000169,Wall clock,37.11,81,Demo Supply Co,Yellow,1149,Fictional demo product: wall clock. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000170,Door mat,38.48,8,Demo Supply Co,Beige,1192,Fictional demo product: door mat. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000171,Wooden coat hanger,39.85,15,Demo Supply Co,White,1235,Fictional demo product: wooden coat hanger. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000172,Fabric storage box,41.22,22,Demo Supply Co,Blue,1278,Fictional demo product: fabric storage box. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000173,Laundry bag,42.59,29,Demo Supply Co,Black,1321,Fictional demo product: laundry bag. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000174,Shoe organiser,43.96,36,Demo Supply Co,Grey,1364,Fictional demo product: shoe organiser. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000175,Bedside organiser,45.33,43,Demo Supply Co,Green,1407,Fictional demo product: bedside organiser. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000176,Reading light,46.70,50,Demo Supply Co,Red,1450,Fictional demo product: reading light. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Lighting
+000177,LED night light,48.07,57,Demo Supply Co,Natural,1493,Fictional demo product: led night light. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Lighting
+000178,Table mirror,49.44,64,Demo Supply Co,Silver,1536,Fictional demo product: table mirror. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000179,Ceramic vase,50.81,71,Demo Supply Co,Yellow,1579,Fictional demo product: ceramic vase. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000180,Decorative bowl,52.18,78,Demo Supply Co,Beige,1622,Fictional demo product: decorative bowl. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Home
+000181,Canvas tote bag,53.55,5,Demo Supply Co,White,1665,Fictional demo product: canvas tote bag. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Travel
+000182,Shopping bag,54.92,12,Demo Supply Co,Blue,1708,Fictional demo product: shopping bag. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Travel
+000183,Travel pouch,56.29,19,Demo Supply Co,Black,1751,Fictional demo product: travel pouch. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Travel
+000184,Passport holder,57.66,26,Demo Supply Co,Grey,1794,Fictional demo product: passport holder. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Travel
+000185,Luggage tag,59.03,33,Demo Supply Co,Green,37,Fictional demo product: luggage tag. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Travel
+000186,Travel neck pillow,2.40,40,Demo Supply Co,Red,80,Fictional demo product: travel neck pillow. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Travel
+000187,Packing cube,3.77,47,Demo Supply Co,Natural,123,Fictional demo product: packing cube. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Travel
+000188,Compact umbrella,5.14,54,Demo Supply Co,Silver,166,Fictional demo product: compact umbrella. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Travel
+000189,Drawstring backpack,6.51,61,Demo Supply Co,Yellow,209,Fictional demo product: drawstring backpack. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Travel
+000190,Reusable rain poncho,7.88,68,Demo Supply Co,Beige,252,Fictional demo product: reusable rain poncho. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Travel
+000191,Yoga mat,9.25,75,Demo Supply Co,White,295,Fictional demo product: yoga mat. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Fitness
+000192,Resistance band,10.62,82,Demo Supply Co,Blue,338,Fictional demo product: resistance band. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Fitness
+000193,Skipping rope,11.99,9,Demo Supply Co,Black,381,Fictional demo product: skipping rope. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Fitness
+000194,Sports towel,13.36,16,Demo Supply Co,Grey,424,Fictional demo product: sports towel. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Fitness
+000195,Exercise ball,14.73,23,Demo Supply Co,Green,467,Fictional demo product: exercise ball. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Fitness
+000196,Grip trainer,16.10,30,Demo Supply Co,Red,510,Fictional demo product: grip trainer. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Fitness
+000197,Reflective armband,17.47,37,Demo Supply Co,Natural,553,Fictional demo product: reflective armband. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Fitness
+000198,Fitness journal,18.84,44,Demo Supply Co,Silver,596,Fictional demo product: fitness journal. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Fitness
+000199,Stretching strap,20.21,51,Demo Supply Co,Yellow,639,Fictional demo product: stretching strap. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Fitness
+000200,Foam roller,21.58,58,Demo Supply Co,Beige,682,Fictional demo product: foam roller. Designed as sample data for testing supplier-file comparisons. All product details are made up.,Fitness

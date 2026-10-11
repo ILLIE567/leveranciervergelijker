@@ -112,7 +112,7 @@ class PublicAppTests(unittest.TestCase):
     def test_demo_loads_and_computes_five_changes(self):
         app = AppTest.from_file(str(ROOT / "streamlit_app.py")).run(timeout=30)
         self.assertEqual(len(app.exception), 0)
-        self.assertEqual([metric.value for metric in app.metric], ["20", "20", "5"])
+        self.assertEqual([metric.value for metric in app.metric], ["100", "100", "5"])
         self.assertEqual(len(app.dataframe[-1].value), 5)
 
     def test_each_app_session_has_independent_saved_profiles(self):

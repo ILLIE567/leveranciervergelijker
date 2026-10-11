@@ -71,7 +71,7 @@ def profile_controls():
 def upload_products(label, key, profiles, mode):
     st.subheader(label)
     if mode == "demo":
-        filename = f"leverancier_{'oud' if key == 'old' else 'nieuw'}.csv"
+        filename = f"supplier_{key}.csv"
         data = (ROOT / "sample_data" / filename).read_bytes()
         st.caption(tr("Fictief voorbeeld: {name}", "Fictional sample: {name}", name=filename))
     else:
@@ -213,14 +213,23 @@ def main():
     modes = {"demo": tr("Oefenbestanden", "Sample files"), "upload": tr("Eigen bestanden", "Your own files")}
     mode = st.radio(tr("Hoe wil je testen?", "How would you like to test?"), list(modes), format_func=lambda value: modes[value], horizontal=True, key="source_mode")
     if mode == "demo":
-        st.caption(tr("De oefenbestanden bevatten ieder 20 producten en samen precies 5 veranderingen.", "Each sample file contains 20 products, with exactly 5 changes between the files."))
+        st.caption(tr("De Engelse oefenbestanden bevatten ieder 100 producten en samen precies 5 veranderingen.", "Each English sample file contains 100 products, with exactly 5 changes between the files."))
         left_download, right_download = st.columns(2)
         for column, label, name in (
-            (left_download, ("Download oud oefenbestand", "Download old sample file"), "leverancier_oud.csv"),
-            (right_download, ("Download nieuw oefenbestand", "Download new sample file"), "leverancier_nieuw.csv"),
+            (left_download, ("Download oud oefenbestand", "Download old sample file"), "supplier_old.csv"),
+            (right_download, ("Download nieuw oefenbestand", "Download new sample file"), "supplier_new.csv"),
         ):
             with column:
-                st.download_button(tr(*label), (ROOT / "sample_data" / name).read_bytes(), name, "text/csv", key=f"example_{name}")
+                for extension, mime in (
+                    ("csv", "text/csv"),
+                    ("xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"),
+                ):
+                    download_name = Path(name).with_suffix(f".{extension}").name
+                    st.download_button(
+                        f"{tr(*label)} ({extension.upper()})",
+                        (ROOT / "sample_data" / download_name).read_bytes(),
+                        download_name, mime, key=f"example_{download_name}",
+                    )
 
     left, right = st.columns(2)
     with left:
