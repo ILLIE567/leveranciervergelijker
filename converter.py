@@ -13,6 +13,10 @@ from openpyxl import load_workbook
 FIELDS = ("Title", "Variant SKU", "Variant Price", "Variant Inventory Qty")
 ERROR_COLUMNS = ["Rijnummer", "Type fout", "Uitleg"]
 MAX_BYTES = 10 * 1024 * 1024
+# Configureer de procesbrede CSV-grens eenmaal, niet per bezoekersupload.
+# Een tekstveld kan zo het hele toegestane bestand beslaan.
+MAX_CSV_FIELD_CHARS = MAX_BYTES
+csv.field_size_limit(MAX_CSV_FIELD_CHARS)
 MAX_ROWS = 50_000
 MAX_COLUMNS = 100
 ALIASES = {
@@ -68,7 +72,13 @@ def read_supplier_file(data, filename, delimiter=None, encoding="utf-8-sig", she
                 if len(rows) >= MAX_ROWS:
                     raise ValueError(f"Maximaal {MAX_ROWS} datarijen toegestaan; er wordt niets afgekapt.")
                 rows.append(row)
-        except (csv.Error, StopIteration) as exc:
+        except csv.Error as exc:
+            if "field larger than field limit" in str(exc):
+                raise ValueError(
+                    f"Een CSV-veld bevat te veel tekst (maximaal {csv.field_size_limit()} tekens)."
+                ) from exc
+            raise ValueError("Ongeldige of lege CSV. Controleer de aanhalingstekens en kopregel.") from exc
+        except StopIteration as exc:
             raise ValueError("Ongeldige of lege CSV. Controleer de aanhalingstekens en kopregel.") from exc
         return pd.DataFrame(rows, columns=headers, dtype=object)
     if extension == ".xlsx":

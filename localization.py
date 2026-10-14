@@ -62,6 +62,7 @@ for dutch, english in (("oude", "old"), ("nieuwe", "new")):
     ERROR_TEXT[f"Het {dutch} bestand bevat geen producten."] = f"The {english} file contains no products."
 
 DYNAMIC_ERRORS = (
+    (r"Een CSV-veld bevat te veel tekst \(maximaal (\d+) tekens\)\.", "A CSV field contains too much text (maximum {0} characters)."),
     (r"CSV-record (\d+): (\d+) velden, verwacht (\d+)\. Controleer scheidingstekens en quotes\.", "CSV record {0}: {1} fields, expected {2}. Check the separators and quotation marks."),
     (r"Excel-rij (\d+) bevat cellen buiten de kolomnamen\. Geef elke kolom een naam\.", "Excel row {0} contains cells beyond the column headers. Give every column a name."),
     (r"Excel-formule op (.+)\. Vervang formules door vaste waarden in een kopie\.", "Excel formula in {0}. Replace formulas with fixed values in a copy."),
