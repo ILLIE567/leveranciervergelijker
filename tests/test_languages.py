@@ -53,6 +53,7 @@ class LanguageTests(unittest.TestCase):
 
     def test_file_reading_and_profile_errors_are_translated(self):
         examples = {
+            "Een CSV-veld bevat te veel tekst (maximaal 32 tekens).": "A CSV field contains too much text (maximum 32 characters).",
             "Excel-formule op A2. Vervang formules door vaste waarden in een kopie.": "Excel formula in A2. Replace formulas with fixed values in a copy.",
             "Excel-rij 17 bevat cellen buiten de kolomnamen. Geef elke kolom een naam.": "Excel row 17 contains cells beyond the column headers. Give every column a name.",
             "CSV-record 4: 5 velden, verwacht 4. Controleer scheidingstekens en quotes.": "CSV record 4: 5 fields, expected 4. Check the separators and quotation marks.",

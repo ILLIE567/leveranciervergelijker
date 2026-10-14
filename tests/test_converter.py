@@ -1,9 +1,10 @@
 """Uitvoeren: python -m unittest discover -s tests -v"""
 
+import csv
 import hashlib
 import re
 import unittest
-from io import BytesIO
+from io import BytesIO, StringIO
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
@@ -38,6 +39,48 @@ def convert_sample(filename):
 
 
 class ConverterTests(unittest.TestCase):
+    def test_long_csv_descriptions_above_former_limit_are_preserved(self):
+        for size in (131_072, 131_073, 140_000):
+            description = "x" * size
+            data = ("name,sku,price,stock,description\nMug,000101,12.95,5," + description + "\n").encode()
+            for delimiter in (None, ","):
+                with self.subTest(size=size, delimiter=delimiter):
+                    frame = read_supplier_file(data, "long.csv", delimiter=delimiter)
+                    self.assertEqual(frame.loc[0, "description"], description)
+                    products, errors = convert_products(frame, suggest_mapping(frame.columns))
+                    self.assertTrue(errors.empty)
+                    self.assertEqual(products["Variant SKU"].tolist(), ["000101"])
+
+    def test_long_quoted_csv_text_keeps_accents_quotes_and_line_breaks(self):
+        description = 'Caf\u00e9, "kleur"; regel\n' * 8_000
+        buffer = StringIO(newline="")
+        writer = csv.writer(buffer, delimiter=";")
+        writer.writerow(["name", "sku", "price", "stock", "description"])
+        writer.writerow(["Mug", "000101", "12,95", "5", description])
+        frame = read_supplier_file(buffer.getvalue().encode("utf-8-sig"), "quoted.csv", delimiter=";")
+        self.assertEqual(frame.loc[0, "description"], description)
+        self.assertEqual(frame.loc[0, "sku"], "000101")
+
+    def test_long_csv_field_respects_total_file_size_boundary(self):
+        prefix = b"name,sku,price,stock,description\nMug,000101,12.95,5,"
+        description = b"x" * (MAX_BYTES - len(prefix) - 1)
+        data = prefix + description + b"\n"
+        self.assertEqual(len(data), MAX_BYTES)
+        frame = read_supplier_file(data, "boundary.csv", delimiter=",")
+        self.assertEqual(frame.loc[0, "description"], description.decode())
+        with self.assertRaisesRegex(ValueError, "bestand is te groot"):
+            read_supplier_file(prefix + description + b"x\n", "too_large.csv", delimiter=",")
+
+    def test_csv_field_limit_error_reports_its_actual_cause(self):
+        previous = csv.field_size_limit(32)
+        try:
+            at_limit = read_supplier_file(b"description\n" + b"x" * 32 + b"\n", "limit.csv", delimiter=",")
+            self.assertEqual(len(at_limit.loc[0, "description"]), 32)
+            with self.assertRaisesRegex(ValueError, r"CSV-veld bevat te veel tekst \(maximaal 32 tekens\)"):
+                read_supplier_file(b"description\n" + b"x" * 33 + b"\n", "limit.csv", delimiter=",")
+        finally:
+            csv.field_size_limit(previous)
+
     def test_incorrect_or_missing_excel_dimensions_never_hide_rows(self):
         original = xlsx_bytes([["name", "sku", "price", "stock"],
                                ["Mok", "001", 2, 3], ["Pen", "002", 4, 5]])

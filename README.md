@@ -45,9 +45,20 @@ gebruikt hiervoor geen globale cache. Instellingen blijven tijdens het bezoek
 beschikbaar. Download ze als JSON voor een volgend bezoek en laad dat bestand
 later weer in. Een bestaande lokale `leveranciers.json` kan ook worden ingelezen.
 
+Gelezen bestanden, validaties en de vergelijking worden uitsluitend binnen
+dezelfde bezoekerssessie hergebruikt. Taal wisselen of een leveranciersnaam
+invullen verwerkt de producten niet opnieuw. Een ander bestand, werkblad,
+scheidingsteken, codering of kolomkoppeling vernieuwt de betrokken resultaten.
+Per kant blijft alleen het laatste resultaat bewaard; eerdere uploads worden
+niet opgestapeld. Verwijder je een upload, dan worden de bijbehorende resultaten
+uit het sessiegeheugen verwijderd. Een nieuw bezoek leest de bestanden opnieuw.
+
 Uploads worden op de hostingserver in het geheugen verwerkt. Gebruik voor de
 publieke test fictieve of geanonimiseerde productgegevens. Maximaal 10 MB per
-bestand, 50.000 rijen en 100 kolommen. De app voert Excel-formules niet uit.
+bestand (10 MiB = 10.485.760 bytes), 50.000 rijen en 100 kolommen. De app voert Excel-formules niet uit.
+Lange CSV-omschrijvingen worden volledig gelezen, ook in extra kolommen.
+De CSV-lezer staat maximaal 10.485.760 tekens per veld toe; de totale
+bestandslimiet blijft altijd gelden, ook voor tekst met meerdere bytes per teken.
 
 ## Grenzen
 

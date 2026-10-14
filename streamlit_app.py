@@ -10,6 +10,7 @@ from comparison import compare_products
 from converter import FIELDS, convert_products, csv_bytes, excel_sheet_names, read_supplier_file, suggest_mapping
 from localization import localize_errors, localize_report, translate_error
 from profiles import PROFILE_KEY, decode_profiles, encode_profiles, get_profiles, save_profile
+from session_results import discard_results, discard_source, result_signature, reuse_result
 
 ROOT = Path(__file__).resolve().parent
 FEEDBACK_URL = "https://community.shopify.com/t/student-zoekt-webshopbeheerder-voor-test-met-leveranciersbestanden/695844"
@@ -80,9 +81,11 @@ def upload_products(label, key, profiles, mode):
             type=["csv", "xlsx"], key=f"upload_{key}",
         )
         if uploaded is None:
+            discard_source(st.session_state, key)
             return None
         filename, data = uploaded.name, uploaded.getvalue()
 
+    file_signature = (mode, filename, hashlib.sha256(data).hexdigest())
     delimiter, encoding, sheet = None, "utf-8-sig", None
     try:
         if filename.lower().endswith(".csv"):
@@ -99,15 +102,28 @@ def upload_products(label, key, profiles, mode):
             code = st.selectbox(tr("Tekencodering", "Text encoding"), ["UTF-8", "Windows-1252"], key=f"encoding_{key}")
             encoding = "utf-8-sig" if code == "UTF-8" else "cp1252"
         else:
-            sheet = st.selectbox(tr("Werkblad", "Worksheet"), excel_sheet_names(data), key=f"sheet_{key}")
-        frame = read_supplier_file(data, filename, delimiter=delimiter, encoding=encoding, sheet_name=sheet)
+            sheets = reuse_result(st.session_state, f"sheets_{key}", file_signature,
+                                  lambda: excel_sheet_names(data))
+            sheet = st.selectbox(tr("Werkblad", "Worksheet"), sheets, key=f"sheet_{key}")
+        frame_signature = (file_signature, delimiter, encoding, sheet)
+        if result_signature(st.session_state, f"frame_{key}") != frame_signature:
+            discard_results(st.session_state, f"products_{key}", "comparison")
+        if filename.lower().endswith(".csv"):
+            discard_results(st.session_state, f"sheets_{key}")
+        frame = reuse_result(
+            st.session_state, f"frame_{key}", frame_signature,
+            lambda: read_supplier_file(data, filename, delimiter=delimiter,
+                                       encoding=encoding, sheet_name=sheet),
+        )
     except Exception as error:
+        discard_source(st.session_state, key)
         st.error(tr("Bestand kon niet worden gelezen: {error}", "Could not read the file: {error}", error=translate_error(str(error), language())))
         return None
 
     st.write(tr("{count} datarijen gevonden.", "{count} data rows found.", count=len(frame)))
     st.dataframe(frame.head(10).astype(str), hide_index=True)
     if frame.empty:
+        discard_results(st.session_state, f"products_{key}", "comparison")
         st.warning(tr("Het bestand bevat geen producten.", "The file contains no products."))
         return None
 
@@ -164,9 +180,11 @@ def upload_products(label, key, profiles, mode):
                 st.rerun()
 
     if not complete:
+        discard_results(st.session_state, f"products_{key}", "comparison")
         st.warning(tr("Koppel eerst alle vier velden.", "Map all four fields first."))
         return None
     if not unique:
+        discard_results(st.session_state, f"products_{key}", "comparison")
         st.error(tr("Kies voor ieder veld een verschillende kolom.", "Choose a different column for each field."))
         return None
     st.caption(tr(
@@ -175,7 +193,13 @@ def upload_products(label, key, profiles, mode):
         column=mapping["Variant Price"],
     ))
     try:
-        products, errors = convert_products(frame, mapping)
+        products_signature = (frame_signature, tuple(mapping[field] for field in FIELDS))
+        if result_signature(st.session_state, f"products_{key}") != products_signature:
+            discard_results(st.session_state, "comparison")
+        products, errors = reuse_result(
+            st.session_state, f"products_{key}", products_signature,
+            lambda: convert_products(frame, mapping),
+        )
     except ValueError as error:
         show_error(error)
         return None
@@ -237,10 +261,15 @@ def main():
     with right:
         new = upload_products(tr("2. Nieuw bestand", "2. New file"), "new", profiles, mode)
     if old is None or new is None:
+        discard_results(st.session_state, "comparison")
         st.write(tr("Gebruik twee foutvrije bestanden om te vergelijken.", "Use two files without errors to compare."))
         return
     try:
-        report = compare_products(old, new)
+        comparison_signature = tuple(
+            result_signature(st.session_state, f"products_{side}") for side in ("old", "new")
+        )
+        report = reuse_result(st.session_state, "comparison", comparison_signature,
+                              lambda: compare_products(old, new))
     except ValueError as error:
         show_error(error)
         return
